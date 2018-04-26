@@ -15,15 +15,16 @@ namespace ScoreTableMobile.Backend.Data
             restService = service;
         }
 
-        public Task<List<LeagueModel>> GetTasksAsync()
+        public Task<LeagueModel> GetTasksLeagueAsync()
         {
-            return restService.getDataAsync();
+            return restService.getDataLeagueAsync();
         }
 
-        //public Task<List<TeamModel>> GetTeamById()
-        //{
-        //    return restService.getDataAsync();
-        //}
+        public Task<List<TableModel>> GetTasksTableAsync()
+        {
+            return restService.getDataTableAsync();
+        }
+
     }
         
 }

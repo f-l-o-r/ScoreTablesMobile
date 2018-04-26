@@ -7,19 +7,11 @@
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="100" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="100" />
-                </Grid.RowDefinitions>
-                <Entry x:Name="entUsername"  Placeholder="username" Grid.Row="0" Grid.Column="0"></Entry>
-                <Entry x:Name="entPassword" Placeholder="password" Grid.Row="1" Grid.Column="0"></Entry>
-                <Button x:Name="btnSignIn" Clicked="onClickSignIn" Text="SignIn"  Grid.Row="2" Grid.Column="0"></Button>
-            </Grid>
+            <StackLayout Margin="20">
+                <Entry x:Name="entUsername"  Placeholder="username"></Entry>
+                <Entry x:Name="entPassword" Placeholder="password"></Entry>
+                <Button x:Name="btnSignIn" Clicked="onClickSignIn" Text="SignIn"></Button>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -3283,12 +3283,13 @@ containing a value of this type.
         public static final int notification_template_media_custom=0x7f03003b;
         public static final int notification_template_part_chronometer=0x7f03003c;
         public static final int notification_template_part_time=0x7f03003d;
-        public static final int select_dialog_item_material=0x7f03003e;
-        public static final int select_dialog_multichoice_material=0x7f03003f;
-        public static final int select_dialog_singlechoice_material=0x7f030040;
-        public static final int support_simple_spinner_dropdown_item=0x7f030041;
-        public static final int tabbar=0x7f030042;
-        public static final int toolbar=0x7f030043;
+        public static final int scrollviewer=0x7f03003e;
+        public static final int select_dialog_item_material=0x7f03003f;
+        public static final int select_dialog_multichoice_material=0x7f030040;
+        public static final int select_dialog_singlechoice_material=0x7f030041;
+        public static final int support_simple_spinner_dropdown_item=0x7f030042;
+        public static final int tabbar=0x7f030043;
+        public static final int toolbar=0x7f030044;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f090015;
@@ -3325,6 +3326,7 @@ containing a value of this type.
         public static final int appbar_scrolling_view_behavior=0x7f090036;
         public static final int bottom_sheet_behavior=0x7f090037;
         public static final int character_counter_pattern=0x7f090038;
+        public static final int library_name=0x7f09003e;
         public static final int mr_button_content_description=0x7f090000;
         public static final int mr_cast_button_connected=0x7f090001;
         public static final int mr_cast_button_connecting=0x7f090002;

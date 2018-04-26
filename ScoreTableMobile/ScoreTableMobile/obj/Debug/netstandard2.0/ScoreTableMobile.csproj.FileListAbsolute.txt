@@ -17,6 +17,7 @@ C:\Users\ortizrua\source\repos\ScoreTableMobile\ScoreTableMobile\ScoreTableMobil
 C:\git\ScoreTablesMobile\ScoreTableMobile\ScoreTableMobile\bin\Debug\netstandard2.0\ScoreTableMobile.deps.json
 C:\git\ScoreTablesMobile\ScoreTableMobile\ScoreTableMobile\bin\Debug\netstandard2.0\ScoreTableMobile.dll
 C:\git\ScoreTablesMobile\ScoreTableMobile\ScoreTableMobile\bin\Debug\netstandard2.0\ScoreTableMobile.pdb
+C:\git\ScoreTablesMobile\ScoreTableMobile\ScoreTableMobile\obj\Debug\netstandard2.0\ScoreTableMobile.csprojResolveAssemblyReference.cache
 C:\git\ScoreTablesMobile\ScoreTableMobile\ScoreTableMobile\obj\Debug\netstandard2.0\ScoreTableMobile.csproj.CoreCompileInputs.cache
 C:\git\ScoreTablesMobile\ScoreTableMobile\ScoreTableMobile\obj\Debug\netstandard2.0\ScoreTableMobile.App.xaml.g.cs
 C:\git\ScoreTablesMobile\ScoreTableMobile\ScoreTableMobile\obj\Debug\netstandard2.0\ScoreTableMobile.Login.LoginView.xaml.g.cs
