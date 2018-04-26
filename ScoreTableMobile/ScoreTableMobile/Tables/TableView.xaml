@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScoreTableMobile.Tables.TableView" Title="Detail">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding Orders}" HorizontalOptions="Center">
+            <ListView.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="100" />
+                        </Grid.RowDefinitions>
+                        <Label Text="Team" Grid.Row="0" Grid.Column="0"/>
+
+                        <Label Text="Pts" Grid.Row="0" Grid.Column="1" />
+
+                        <Label Text="MD"  Grid.Row="0" Grid.Column="2" />
+                        <Label Text="W" Grid.Row="0" Grid.Column="3" />
+                        <Label Text="W" Grid.Row="0" Grid.Column="4" />
+                        <Label Text="W" Grid.Row="0" Grid.Column="5" />
+                        <Label Text="W" Grid.Row="0" Grid.Column="6" />
+                        <Label Text="W" Grid.Row="0" Grid.Column="7" />
+                    </Grid>
+
+                </ListView.Header>
+                <ListView.ItemTemplate>
+
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
