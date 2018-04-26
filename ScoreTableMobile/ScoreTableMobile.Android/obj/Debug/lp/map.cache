@@ -2,6 +2,14 @@ FormsViewGroup
 Newtonsoft.Json
 RestSharp
 ScoreTableMobile
+Syncfusion.Core.XForms
+Syncfusion.Data.Portable
+Syncfusion.GridCommon.Portable
+Syncfusion.SfDataGrid.XForms.Android
+Syncfusion.SfDataGrid.XForms
+Syncfusion.SfNumericTextBox.Android
+Syncfusion.SfNumericTextBox.XForms.Android
+Syncfusion.SfNumericTextBox.XForms
 System.Runtime
 Xamarin.Android.Support.Animated.Vector.Drawable
 Xamarin.Android.Support.Annotations
@@ -25,4 +33,6 @@ Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
 netstandard
 System.ComponentModel
+System.Resources.ResourceManager
+System.Linq.Queryable
 System.Reflection.Extensions

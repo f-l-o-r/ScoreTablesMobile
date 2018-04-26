@@ -9,10 +9,13 @@ namespace ScoreTableMobile.Backend.Data
 {
     public interface ITeamRestService
     {
-        Task<List<LeagueModel>> getDataAsync();
+        //Task<List<LeagueModel>> getDataLeagueAsync();
 
+        Task<List<TableModel>> getDataTableAsync();
+
+        Task<LeagueModel> getDataLeagueAsync();
         //Task SaveTeamModelAsync(TodoItem item, bool isNewItem);
 
-       /// Task<List<TeamModel>> getTeamById(string id);
+        /// Task<List<TeamModel>> getTeamById(string id);
     }
 }
