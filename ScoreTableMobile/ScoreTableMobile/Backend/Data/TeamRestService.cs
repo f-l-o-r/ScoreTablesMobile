@@ -16,6 +16,7 @@ namespace ScoreTableMobile.Backend.Data
 
         public List<LeagueModel> ItemLeague { get; set; }
         public List<TableModel> ItemTable { get; set; }
+        public List<ScheduleModel> ItemSchedule { get; set; }
 
         public TeamRestService()
         {
@@ -69,6 +70,31 @@ namespace ScoreTableMobile.Backend.Data
             }
 
             return ItemTable;
+        }
+
+        public async Task<List<ScheduleModel>> getDataScheduleAsync()
+        {
+            ItemSchedule = new List<ScheduleModel>();
+            var uri = new Uri(string.Format(Constants.restUrlSchedule, string.Empty));
+
+            try
+            {
+                var response = await client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    ItemSchedule = JsonConvert.DeserializeObject<List<ScheduleModel>>(content, new JsonSerializerSettings
+                    {
+                        NullValueHandling = NullValueHandling.Ignore
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"ERROR {0}", ex.Message);
+            }
+
+            return ItemSchedule;
         }
     }
 }
