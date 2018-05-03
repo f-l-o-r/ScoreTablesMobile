@@ -11,8 +11,10 @@ namespace ScoreTableMobile.Backend.Data
     {
         Task<List<LeagueModel>> getDataAsync();
 
+        Task<bool> postDataAsync(LeagueModel model);
+
         //Task SaveTeamModelAsync(TodoItem item, bool isNewItem);
 
-       /// Task<List<TeamModel>> getTeamById(string id);
+        /// Task<List<TeamModel>> getTeamById(string id);
     }
 }
