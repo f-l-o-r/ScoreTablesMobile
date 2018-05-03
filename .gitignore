@@ -1,5 +1,5 @@
-**/.vs
-ScoreTableMobile/ScoreTableMobile**/bin
-ScoreTableMobile/ScoreTableMobile**/obj
+/.vs
+**/**/bin
+**/**/obj
 *.user
 *.bak
