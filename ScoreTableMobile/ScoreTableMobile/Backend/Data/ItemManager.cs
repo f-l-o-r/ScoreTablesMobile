@@ -25,6 +25,11 @@ namespace ScoreTableMobile.Backend.Data
             return restService.getDataTableAsync();
         }
 
+        public Task<List<ScheduleModel>> GetTasksScheduleAsync()
+        {
+            return restService.getDataScheduleAsync();
+        }
+
     }
         
 }

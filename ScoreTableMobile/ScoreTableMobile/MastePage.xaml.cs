@@ -42,6 +42,8 @@ namespace ScoreTableMobile
                     return new Tables.TableView();
                 case "Teams":
                     return new Team.TeamView();
+                case "Schedule":
+                    return new Schedule.ScheduleView();
             }
             return new MastePageDetail();
         }

@@ -6,7 +6,7 @@
              >
     <ContentPage.Content>
         <StackLayout>
-            <syncfusion:SfDataGrid x:Name="dataGrid" ItemsSource="{Binding OrderInfoCollection}">
+            <syncfusion:SfDataGrid x:Name="dataGrid" ColumnSizer="Auto" ItemsSource="{Binding OrderInfoCollection}" AutoGenerateColumns="False" HorizontalOptions="FillAndExpand">
                 <syncfusion:SfDataGrid.Columns>
                     <syncfusion:GridTextColumn HeaderText = "Name" MappingName="Name" />
                     <syncfusion:GridTextColumn HeaderText = "PM" MappingName="PlayedMatches" />

@@ -14,6 +14,8 @@ namespace ScoreTableMobile.Backend.Data
         Task<List<TableModel>> getDataTableAsync();
 
         Task<LeagueModel> getDataLeagueAsync();
+
+        Task<List<ScheduleModel>> getDataScheduleAsync();
         //Task SaveTeamModelAsync(TodoItem item, bool isNewItem);
 
         /// Task<List<TeamModel>> getTeamById(string id);

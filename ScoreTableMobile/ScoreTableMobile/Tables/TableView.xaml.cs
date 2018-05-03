@@ -25,30 +25,10 @@ namespace ScoreTableMobile.Tables
 
         protected async override void OnAppearing()
         {
-            var TableItem = (TableModel)BindingContext;
-            await Navigation.PopAsync(); 
-            ViewModel();
-            dataGrid.ItemsSource = DynamicCollection;
+            List<TableModel> DynamicJsonCollection = await TodoManager.GetTasksTableAsync();
+            dataGrid.ItemsSource = DynamicJsonCollection;
+            await Navigation.PopAsync();
         }
-
-        public ObservableCollection<dynamic> DynamicCollection { get; set; }
-        public List<TableModel> DynamicJsonCollection { get; set; }
-
-        public async void ViewModel()
-        {
-            DynamicJsonCollection = await TodoManager.GetTasksTableAsync();
-            DynamicCollection = PopulateData();
-        }
-
-        private ObservableCollection<dynamic> PopulateData()
-        {
-            var data = new ObservableCollection<dynamic>();
-            foreach (var item in DynamicJsonCollection)
-            {
-                data.Add(item);
-            }
-            return data;
-        }
-
+        
     }
 }
