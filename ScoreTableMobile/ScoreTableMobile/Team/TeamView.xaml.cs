@@ -26,11 +26,16 @@ namespace ScoreTableMobile.Team
         {
             // var TeamList = e. as TeamModel
             var todoItem = (LeagueModel)BindingContext;
-            await TodoManager.GetTasksAsync();
+            //await TodoManager.GetTasksAsync();
             await Navigation.PopAsync(); ;
             var teamage = new TeamModel();
-            List<LeagueModel> listLeague = await TodoManager.GetTasksAsync();
-            lstView.ItemsSource = listLeague[0].Teams;
+            try {
+                LeagueModel listLeague = await TodoManager.GetTasksLeagueAsync();
+                lstView.ItemsSource = listLeague.Teams;
+            } catch (Exception e) {
+                string exception = e.Message;
+            }
+            
         }
 
         /* public ObservableCollection<VeggieViewModel> veggies { get; set; }

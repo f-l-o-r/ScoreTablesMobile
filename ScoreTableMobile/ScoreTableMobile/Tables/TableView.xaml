@@ -1,30 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ScoreTableMobile.Tables.TableView" Title="Detail">
+             x:Class="ScoreTableMobile.Tables.TableView" Title="Detail"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             >
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding Orders}" HorizontalOptions="Center">
+            <syncfusion:SfDataGrid x:Name="dataGrid" ColumnSizer="Auto" ItemsSource="{Binding OrderInfoCollection}" AutoGenerateColumns="False" HorizontalOptions="FillAndExpand">
+                <syncfusion:SfDataGrid.Columns>
+                    <syncfusion:GridTextColumn HeaderText = "Name" MappingName="Name" />
+                    <syncfusion:GridTextColumn HeaderText = "PM" MappingName="PlayedMatches" />
+                    <syncfusion:GridTextColumn HeaderText = "W" MappingName="Wins" />
+                    <syncfusion:GridTextColumn HeaderText = "D" MappingName="Draws" />
+                    <syncfusion:GridTextColumn HeaderText = "L" MappingName="Losses" />
+                    <syncfusion:GridTextColumn HeaderText = "GIF" MappingName="GoalsInFavor" />
+                    <syncfusion:GridTextColumn HeaderText = "GIA" MappingName="GoalsAgainst" />
+                    <syncfusion:GridTextColumn HeaderText = "GD" MappingName="GoalDifference" />
+                    <syncfusion:GridTextColumn HeaderText = "P" MappingName="Points" />
+                </syncfusion:SfDataGrid.Columns>
+            </syncfusion:SfDataGrid>
+            <!--<ListView ItemsSource="{Binding Orders}" HorizontalOptions="Center">
             <ListView.Header>
+                
                     <Grid>
                         <Grid.ColumnDefinitions>
+                            <RowDefinition Height="Auto" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="100" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
                             <RowDefinition Height="100" />
                         </Grid.RowDefinitions>
                         <Label Text="Team" Grid.Row="0" Grid.Column="0"/>
-
                         <Label Text="Pts" Grid.Row="0" Grid.Column="1" />
-
-                        <Label Text="MD"  Grid.Row="0" Grid.Column="2" />
-                        <Label Text="W" Grid.Row="0" Grid.Column="3" />
-                        <Label Text="W" Grid.Row="0" Grid.Column="4" />
-                        <Label Text="W" Grid.Row="0" Grid.Column="5" />
-                        <Label Text="W" Grid.Row="0" Grid.Column="6" />
-                        <Label Text="W" Grid.Row="0" Grid.Column="7" />
+                        <Label Text="W"  Grid.Row="0" Grid.Column="2" />
+                        <Label Text="D" Grid.Row="0" Grid.Column="3" />
+                        <Label Text="L" Grid.Row="0" Grid.Column="4" />
+                        <Label Text="GIF" Grid.Row="0" Grid.Column="5" />
+                        <Label Text="GA" Grid.Row="0" Grid.Column="6" />
+                        <Label Text="GD" Grid.Row="0" Grid.Column="7" />
+                        <Label Text="P" Grid.Row="0" Grid.Column="8" />
                     </Grid>
 
                 </ListView.Header>
@@ -32,7 +49,7 @@
 
                 </ListView.ItemTemplate>
 
-            </ListView>
+            </ListView>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

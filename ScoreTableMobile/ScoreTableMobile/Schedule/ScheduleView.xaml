@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScoreTableMobile.Schedule.ScheduleView">
+    <ContentPage.Content>
+        <ListView  x:Name="GroupedView" 
+		GroupDisplayBinding="{Binding Title}"
+		GroupShortNameBinding="{Binding ShortName}"
+		IsGroupingEnabled="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                            <Image Source="{Binding HomeTeam.ImageURL}" WidthRequest="50" HeightRequest="50" Margin="5"></Image>
+                            <StackLayout Orientation="Vertical" Margin="10, 0, 10, 0">
+                                <Label Text="{Binding HomeTeam.ID}"/>
+                                <Label Text="{Binding HomeScore}" />
+                            </StackLayout>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                <Image Source="{Binding AwayTeam.ImageURL}" WidthRequest="50" HeightRequest="50" Margin="5"></Image>
+                                <StackLayout Orientation="Vertical" Margin="10, 0, 10, 0">
+                                    <Label Text="{Binding AwayTeam.ID}"/>
+                                    <Label Text="{Binding AwayScore}" />
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate> 
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

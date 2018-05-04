@@ -14,7 +14,9 @@ namespace ScoreTableMobile.Backend.Data
     {
         HttpClient client;
 
-        public List<LeagueModel> Items { get; set; }
+        public List<LeagueModel> ItemLeague { get; set; }
+        public List<TableModel> ItemTable { get; set; }
+        public List<ScheduleModel> ItemSchedule { get; set; }
 
         public TeamRestService()
         {
@@ -27,9 +29,9 @@ namespace ScoreTableMobile.Backend.Data
             //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
         }
 
-        public async Task<List<LeagueModel>> getDataAsync() {
-            Items = new List<LeagueModel>();
-            var uri = new Uri(string.Format(Constants.RestUrl, string.Empty));
+        public async Task<LeagueModel> getDataLeagueAsync() {
+            LeagueModel ItemLeague = new LeagueModel();
+            var uri = new Uri(string.Format(Constants.restUrlLegues, string.Empty));
 
             try
             {
@@ -37,7 +39,7 @@ namespace ScoreTableMobile.Backend.Data
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    Items = JsonConvert.DeserializeObject<List<LeagueModel>>(content);
+                    ItemLeague = JsonConvert.DeserializeObject<LeagueModel>(content);
                 }
             }
             catch (Exception ex)
@@ -45,26 +47,54 @@ namespace ScoreTableMobile.Backend.Data
                 Debug.WriteLine(@"ERROR {0}", ex.Message);
             }
 
-            return Items;
+            return ItemLeague;
+        }
 
-            //    // RestUrl = https://scoretables.herokuapp.com/api/leagues
-            //    var uri = new Uri(string.Format(Constants.RestUrl, string.Empty));
+        public async Task<List<TableModel>> getDataTableAsync()
+        {
+            ItemTable = new List<TableModel>();
+            var uri = new Uri(string.Format(Constants.restUrlTable, string.Empty));
 
-            //    try
-            //    {
-            //        var response = await client.GetAsync(uri);
-            //        if (response.IsSuccessStatusCode)
-            //        {
-            //            var content = await response.Content.ReadAsStringAsync();
-            //            Items = JsonConvert.DeserializeObject<List<TodoItem>>(content);
-            //        }
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        Debug.WriteLine(@"				ERROR {0}", ex.Message);
-            //    }
+            try
+            {
+                var response = await client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    ItemTable = JsonConvert.DeserializeObject<List<TableModel>>(content);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"ERROR {0}", ex.Message);
+            }
 
-            //    return Items;
+            return ItemTable;
+        }
+
+        public async Task<List<ScheduleModel>> getDataScheduleAsync()
+        {
+            ItemSchedule = new List<ScheduleModel>();
+            var uri = new Uri(string.Format(Constants.restUrlSchedule, string.Empty));
+
+            try
+            {
+                var response = await client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    ItemSchedule = JsonConvert.DeserializeObject<List<ScheduleModel>>(content, new JsonSerializerSettings
+                    {
+                        NullValueHandling = NullValueHandling.Ignore
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"ERROR {0}", ex.Message);
+            }
+
+            return ItemSchedule;
         }
 
         public async Task<bool> postDataAsync(LeagueModel model)

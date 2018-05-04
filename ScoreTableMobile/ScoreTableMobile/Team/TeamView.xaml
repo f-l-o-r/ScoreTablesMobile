@@ -9,12 +9,11 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" >
+                                <Image Source="{Binding ImageURL}" WidthRequest="50" HeightRequest="50" Margin="5"></Image>
                                 <StackLayout Orientation="Vertical" Margin="10, 0, 10, 0">
                                     <Label Text = "{Binding ID}" FontSize="24" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40"/>
                                     <Label Text = "{Binding Team}" AbsoluteLayout.LayoutBounds="50, 35, 200, 25"/>
                                 </StackLayout>
-                                <Image Source="{Binding Image}" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
-                                
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
