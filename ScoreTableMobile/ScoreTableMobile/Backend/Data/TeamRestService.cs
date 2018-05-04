@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ScoreTableMobile.Backend.Data
 {
-    class TeamRestService : ITeamRestService
+    public class TeamRestService : ITeamRestService
     {
         HttpClient client;
 
@@ -95,6 +95,29 @@ namespace ScoreTableMobile.Backend.Data
             }
 
             return ItemSchedule;
+        }
+
+        public async Task<bool> postDataAsync(LeagueModel model)
+        {
+            bool success = false;
+            var uri = new Uri(string.Format(Constants.RestUrl, string.Empty));
+
+            try
+            {
+                string jsonmodel = JsonConvert.SerializeObject(model);
+                HttpContent content = new StringContent(jsonmodel, Encoding.UTF8, "application/json");
+                var response = await client.PostAsync(uri, content);
+                if (response.IsSuccessStatusCode)
+                {
+                    success = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"ERROR {0}", ex.Message);
+            }
+
+            return success;
         }
     }
 }
