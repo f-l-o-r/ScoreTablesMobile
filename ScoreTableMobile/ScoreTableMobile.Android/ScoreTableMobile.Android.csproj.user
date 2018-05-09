@@ -3,5 +3,6 @@
   <PropertyGroup>
     <SelectedDevice>OnePlus A0001</SelectedDevice>
     <DefaultDevice>Android_Accelerated_x86_Nougat</DefaultDevice>
+    <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
   </PropertyGroup>
 </Project>
