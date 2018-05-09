@@ -24,9 +24,8 @@ namespace ScoreTableMobile.Schedule
             InitializeComponent ();
             
         }
-        protected async override void OnAppearing() {
-            var groups = new ObservableCollection<ScheduleGroup<string, ScheduleModel>>();
 
+        protected async override void OnAppearing() {
             List<ScheduleModel> listSchedule = await TodoManager.GetTasksScheduleAsync();
 
             var sorted = from schedule in listSchedule
@@ -39,5 +38,11 @@ namespace ScoreTableMobile.Schedule
 
             GroupedView.ItemsSource = ScheduleGrouped;
         }
-	}
+
+        private async void GroupedView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            ScheduleModel matchday = GroupedView.SelectedItem as ScheduleModel;
+            await this.Navigation.PushAsync(new MatchDayPage(matchday));
+        }
+    }
 }

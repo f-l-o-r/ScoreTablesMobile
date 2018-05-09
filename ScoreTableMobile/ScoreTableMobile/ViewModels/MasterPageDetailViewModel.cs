@@ -24,10 +24,8 @@ namespace ScoreTableMobile.ViewModels
         public List<string> leagues = new List<string>();
 
         public ObservableCollection<TeamModel> Teams { get; set; }
-
-        public string json = "{ \"ID\":\"COPA5\", \"Title\":\"COPA\", \"MatchDayAmount\":8, \"Teams\": [ {\"ID\":\"Pablo\",\"Team\":\"Saprissa\"}, {\"ID\":\"Sergio\",\"Team\":\"Heredia\"}, {\"ID\":\"Marvin\",\"Team\":\"Cartago\"} ] }";
-
-        bool canCreateLeague = true;
+        
+        private bool canCreateLeague = true;
 
         private string leagueId = string.Empty;
 
@@ -142,7 +140,7 @@ namespace ScoreTableMobile.ViewModels
             league.Teams.AddRange(Teams);
 
             TeamRestService service = new TeamRestService();
-            bool result = await service.postDataAsync(league);
+            bool result = await service.postDataAsync("leagues", league);
 
             MessagingCenter.Send(this, "postComplete", result);
 

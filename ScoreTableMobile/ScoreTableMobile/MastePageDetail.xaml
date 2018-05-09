@@ -4,10 +4,10 @@
              x:Class="ScoreTableMobile.MastePageDetail"
              xmlns:numeric="clr-namespace:Syncfusion.SfNumericUpDown.XForms;assembly=Syncfusion.SfNumericUpDown.XForms"
              Title="Create League">
-    <ScrollView BackgroundColor="#dededf" Orientation="Vertical">
-        <StackLayout Orientation="Vertical">
-            <StackLayout Orientation="Vertical" Margin="10,10,10,0" BackgroundColor="White" HorizontalOptions="Fill">
-                <Label Text="League Details" TextColor="#03A9F4" FontAttributes="Bold" HorizontalOptions="Center" Margin="5"/>
+    <ScrollView Orientation="Vertical">
+        <StackLayout Orientation="Vertical" BackgroundColor="#dededf">
+            <StackLayout Orientation="Vertical" Margin="10,10,10,0" BackgroundColor="White" HorizontalOptions="Fill" >
+                <Label Text="League Details" TextColor="#2196F3" FontAttributes="Bold" HorizontalOptions="Center" Margin="5" FontSize="Large"/>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*" />
@@ -26,12 +26,12 @@
 
                     <Label Text="Matchdays:" Grid.Row="2" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" Margin="10,0" FontSize="Small"/>
                     <numeric:SfNumericUpDown x:Name="matchdayCountField" Value="{Binding LeagueMatchdayCount, Mode=TwoWay}" 
-                                             FormatString="n" SpinButtonAlignment="Right" MaximumDecimalDigits="0"
-                                             Grid.Row="2" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" Margin="3,0"/>
+                                                 FormatString="n" SpinButtonAlignment="Right" MaximumDecimalDigits="0" Minimum="1" Maximum="100"
+                                                 Grid.Row="2" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" Margin="3,0"/>
                 </Grid>
             </StackLayout>
             <StackLayout Orientation="Vertical" Margin="10,10,10,0" BackgroundColor="White" HorizontalOptions="Fill">
-                <Label Text="Add Teams" TextColor="#03A9F4" FontAttributes="Bold" HorizontalOptions="Center" Margin="5"/>
+                <Label Text="Add Teams" TextColor="#03A9F4" FontAttributes="Bold" HorizontalOptions="Center" Margin="5" FontSize="Large"/>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*" />
@@ -57,7 +57,7 @@
                 </Grid>
             </StackLayout>
             <StackLayout Orientation="Vertical" Margin="10,10,10,0" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="StartAndExpand">
-                <Label Text="Teams" TextColor="#03A9F4" FontAttributes="Bold" HorizontalOptions="Center" Margin="5"/>
+                <Label Text="Teams" TextColor="#03A9F4" FontAttributes="Bold" HorizontalOptions="Center" Margin="5" FontSize="Large"/>
                 <ListView  x:Name="teamListView" RowHeight="44" ItemsSource="{Binding Teams, Mode=TwoWay}" SeparatorColor="#03A9F4" HorizontalOptions="Fill" HeightRequest="150" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -76,9 +76,10 @@
                                         <RowDefinition Height="*" />
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
-                                    <Image Source="{Binding CachedImage}" Grid.RowSpan="2" Grid.Column="0" Aspect="AspectFill" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="2,2" />
-                                    <Label Text = "{Binding Team}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold"/>
-                                    <Label Text = "{Binding ID}" Grid.Row="1" Grid.Column="1" FontSize="Micro" FontAttributes="Italic" />
+                                    <Image Source="{Binding CachedImage}" Grid.RowSpan="2" Grid.Column="0" Aspect="AspectFill"
+                                           VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="2,2" />
+                                    <Label Text="{Binding Team}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                                    <Label Text="{Binding ID}" Grid.Row="1" Grid.Column="1" FontSize="Micro" FontAttributes="Italic" VerticalOptions="CenterAndExpand"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
