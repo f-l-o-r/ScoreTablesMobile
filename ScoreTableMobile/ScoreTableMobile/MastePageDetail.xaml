@@ -2,52 +2,94 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScoreTableMobile.MastePageDetail"
-             Title="Detail">
-    <ScrollView Orientation="Vertical">
-        <StackLayout Orientation="Vertical" Margin="3" Padding="10">
-            <Label Text="Create League" Grid.Column="0" HorizontalTextAlignment="Center" HorizontalOptions="Center" Margin="10"/>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="2*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                </Grid.RowDefinitions>
-                <Label Text="ID:" Grid.Row="0" Grid.Column="0" HorizontalOptions="End" Margin="10,0"/>
-                <Entry x:Name="idField" Text="{Binding LeagueId, Mode=TwoWay}" Grid.Row="0" Grid.Column="1" HorizontalOptions="Fill" Margin="10,2"/>
+             xmlns:numeric="clr-namespace:Syncfusion.SfNumericUpDown.XForms;assembly=Syncfusion.SfNumericUpDown.XForms"
+             Title="Create League">
+    <ScrollView BackgroundColor="#dededf" Orientation="Vertical">
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical" Margin="10,10,10,0" BackgroundColor="White" HorizontalOptions="Fill">
+                <Label Text="League Details" TextColor="#03A9F4" FontAttributes="Bold" HorizontalOptions="Center" Margin="5"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1.4*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="ID:" Grid.Row="0" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" Margin="10,0" FontSize="Small"/>
+                    <Entry x:Name="idField" Text="{Binding LeagueId, Mode=TwoWay}" Grid.Row="0" Grid.Column="1" HorizontalOptions="Fill" FontSize="Small" VerticalOptions="Center" Margin="3,0"/>
 
-                <Label Text="Title:" Grid.Row="1" Grid.Column="0" HorizontalOptions="End" Margin="10,0"/>
-                <Entry x:Name="titleField" Text="{Binding LeagueTitle, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill" Margin="10,2"/>
-            </Grid>
-            <!--<Button x:Name="event" Text="Event" Command="{Binding eventcommand}" HorizontalOptions="Center" Margin="10"/>-->
-        </StackLayout>
-        <StackLayout Orientation="Vertical" Margin="3" Padding="10">
-            <Label Text="Add Teams" Grid.Column="0" HorizontalTextAlignment="Start" HorizontalOptions="Start" Margin="10"/>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="3*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                </Grid.RowDefinitions>
-                
-                <Label Text="ID:" Grid.Row="0" Grid.Column="0" HorizontalOptions="End" Margin="10,0" VerticalOptions="Center"/>
-                <Entry x:Name="teamIdField" Text="{Binding LeagueId, Mode=TwoWay}" Grid.Row="0" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" Margin="10,0"/>
+                    <Label Text="Title:" Grid.Row="1" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" Margin="10,0" FontSize="Small"/>
+                    <Entry x:Name="titleField" Text="{Binding LeagueTitle, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" FontSize="Small" Margin="3,0"/>
 
-                <Label Text="Title:" Grid.Row="1" Grid.Column="0" HorizontalOptions="End" Margin="10,0" VerticalOptions="Center"/>
-                <Entry x:Name="teamTitleField" Text="{Binding LeagueTitle, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" Margin="10,0"/>
+                    <Label Text="Matchdays:" Grid.Row="2" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" Margin="10,0" FontSize="Small"/>
+                    <numeric:SfNumericUpDown x:Name="matchdayCountField" Value="{Binding LeagueMatchdayCount, Mode=TwoWay}" 
+                                             FormatString="n" SpinButtonAlignment="Right" MaximumDecimalDigits="0"
+                                             Grid.Row="2" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" Margin="3,0"/>
+                </Grid>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Margin="10,10,10,0" BackgroundColor="White" HorizontalOptions="Fill">
+                <Label Text="Add Teams" TextColor="#03A9F4" FontAttributes="Bold" HorizontalOptions="Center" Margin="5"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1.4*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
 
-                <Label Text="Matchday Count:" Grid.Row="2" Grid.Column="0" HorizontalOptions="End" Margin="10,0"/>
-                <Entry x:Name="matchdayCountField" Text="{Binding LeagueMatchdayCount, Mode=TwoWay}" Grid.Row="2" Grid.Column="1" HorizontalOptions="Fill" Margin="10,2"/>
-            </Grid>
-        </StackLayout>
-        <StackLayout Orientation="Horizontal" Margin="3" Padding="10">
-            <Button x:Name="event" Text="Event" Command="{Binding eventcommand}" HorizontalOptions="Center" Margin="10"/>
+                    <Label Text="Player ID:" Grid.Row="0" Grid.Column="0" HorizontalOptions="End" Margin="10,0" VerticalOptions="Center" FontSize="Small"/>
+                    <Entry x:Name="teamIdField" Text="{Binding TeamId, Mode=TwoWay}" Grid.Row="0" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" FontSize="Small" Margin="3,0"/>
+
+                    <Label Text="Team:" Grid.Row="1" Grid.Column="0" HorizontalOptions="End" Margin="10,0" VerticalOptions="Center" FontSize="Small"/>
+                    <Entry x:Name="teamTitleField" Text="{Binding TeamName, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" FontSize="Small" Margin="3,0"/>
+
+                    <Label Text="Image URL:" Grid.Row="2" Grid.Column="0" HorizontalOptions="End" Margin="10,0" VerticalOptions="Center" FontSize="Small"/>
+                    <Entry x:Name="teamImageField" Text="{Binding TeamImageURL, Mode=TwoWay}" Grid.Row="2" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" FontSize="Small" Margin="3,0"/>
+
+                    <Button x:Name="addTeamBtn" Text="Add Team" FontSize="Small" Command="{Binding addTeamCommand}" Grid.Row="3" Grid.ColumnSpan="2" BackgroundColor="#03A9F4" TextColor="White" HorizontalOptions="Fill" Margin="10,5"/>
+                </Grid>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Margin="10,10,10,0" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="StartAndExpand">
+                <Label Text="Teams" TextColor="#03A9F4" FontAttributes="Bold" HorizontalOptions="Center" Margin="5"/>
+                <ListView  x:Name="teamListView" RowHeight="44" ItemsSource="{Binding Teams, Mode=TwoWay}" SeparatorColor="#03A9F4" HorizontalOptions="Fill" HeightRequest="150" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell x:Name="viewCell">
+                                <ViewCell.ContextActions>
+                                    <MenuItem BindingContext="{Binding Source={x:Reference teamListView}, Path=BindingContext}"
+                                              Command="{Binding deleteTeamCommand}" CommandParameter="{Binding Source={x:Reference viewCell}, Path=BindingContext}"
+                                        Text="Delete" IsDestructive="True" />
+                                </ViewCell.ContextActions>
+                                <Grid HorizontalOptions="Fill" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="44" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Image Source="{Binding CachedImage}" Grid.RowSpan="2" Grid.Column="0" Aspect="AspectFill" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="2,2" />
+                                    <Label Text = "{Binding Team}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold"/>
+                                    <Label Text = "{Binding ID}" Grid.Row="1" Grid.Column="1" FontSize="Micro" FontAttributes="Italic" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Button x:Name="removeTeamsBtn" IsEnabled="False" Text="Delete Teams" FontSize="Small" Command="{Binding addTeamCommand}" BackgroundColor="#03A9F4" TextColor="White" HorizontalOptions="Fill" Margin="10,5"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Margin="10" BackgroundColor="White" HorizontalOptions="Fill">
+                <Button x:Name="createLeagueBtn" Text="Create League" Command="{Binding createLeagueCommand}" BackgroundColor="#03A9F4" TextColor="White" HorizontalOptions="Fill" Margin="10"/>
+            </StackLayout>
         </StackLayout>
     </ScrollView>
 </ContentPage>

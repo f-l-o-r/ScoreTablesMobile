@@ -21,10 +21,22 @@ namespace ScoreTableMobile
 
         public MastePageDetail()
         {
+            BindingContext = new MasterPageDetailViewModel();
+
             InitializeComponent();
 
-            BindingContext = new MasterPageDetailViewModel();
+            MessagingCenter.Subscribe<MasterPageDetailViewModel, bool>(this, "postComplete", (sender, arg) => {
+                // do something whenever the "Hi" message is sent
+                bool result = arg;
+                if (result)
+                {
+                    DisplayAlert("Success", "League has been created", "OK");
+                }
+                else
+                {
+                    DisplayAlert("Error", "An error occured", "OK");
+                }
+            });
         }
-        
     }
 }
