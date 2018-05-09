@@ -9,7 +9,7 @@
               HasUnevenRows="true"
               ItemsSource="{Binding MenuItems}">
       <ListView.Header>
-        <Grid BackgroundColor="#03A9F4">
+        <Grid BackgroundColor="#2196F3">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="*"/>
@@ -26,6 +26,9 @@
               Grid.Column="1"
               Grid.Row="2"
               Text="ScoreTable"
+              TextColor="White"
+              FontAttributes="Bold"
+              FontSize="Large"
               Style="{DynamicResource SubtitleStyle}"/>
         </Grid>
       </ListView.Header>

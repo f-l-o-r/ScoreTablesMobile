@@ -97,16 +97,39 @@ namespace ScoreTableMobile.Backend.Data
             return ItemSchedule;
         }
 
-        public async Task<bool> postDataAsync(LeagueModel model)
+        public async Task<bool> postDataAsync(string apiMethod, object model)
         {
             bool success = false;
-            var uri = new Uri(string.Concat(Constants.RestUrl, "leagues"));
+            var uri = new Uri(string.Concat(Constants.RestUrl, apiMethod));
 
             try
             {
                 string jsonmodel = JsonConvert.SerializeObject(model);
                 HttpContent content = new StringContent(jsonmodel, Encoding.UTF8, "application/json");
                 var response = await client.PostAsync(uri, content);
+                if (response.IsSuccessStatusCode)
+                {
+                    success = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"ERROR {0}", ex.Message);
+            }
+
+            return success;
+        }
+
+        public async Task<bool> putDataAsync(string apiMethod, string id, object model)
+        {
+            bool success = false;
+            var uri = new Uri(string.Concat(Constants.RestUrl, apiMethod, "/", id));
+
+            try
+            {
+                string jsonmodel = JsonConvert.SerializeObject(model);
+                HttpContent content = new StringContent(jsonmodel, Encoding.UTF8, "application/json");
+                var response = await client.PutAsync(uri, content);
                 if (response.IsSuccessStatusCode)
                 {
                     success = true;

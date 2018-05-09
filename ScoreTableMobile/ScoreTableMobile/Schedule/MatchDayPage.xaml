@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScoreTableMobile.Schedule.MatchDayPage"
+             xmlns:numeric="clr-namespace:Syncfusion.SfNumericUpDown.XForms;assembly=Syncfusion.SfNumericUpDown.XForms"
+             Title="Update Matchday">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="#dededf">
+            <StackLayout Orientation="Vertical" Margin="10,10,10,0" BackgroundColor="White" HorizontalOptions="Fill">
+                <Label Text="{Binding MatchdayID}" TextColor="#2196F3" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" Margin="5"/>
+                <Label Text="{Binding MatchdayCount}" TextColor="#2196F3" FontAttributes="Bold" FontSize="Small" HorizontalOptions="Center" Margin="5"/>
+                <Grid Margin="5,0,5,5" HorizontalOptions="Fill">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="44" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="44"/>
+                        <RowDefinition Height="44"/>
+                    </Grid.RowDefinitions>
+
+                    <Image Source="{Binding Matchday.HomeTeam.CachedImage}" Grid.Row="0" Grid.Column="0" Aspect="AspectFill" 
+                           VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="2,2" />
+                    <Label Text="{Binding Matchday.HomeTeam.Team}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" HorizontalOptions="Start" 
+                           VerticalOptions="CenterAndExpand" Margin="3,0" FontSize="Small"/>
+                    <numeric:SfNumericUpDown x:Name="homeScoreField" Value="{Binding Matchday.HomeScore, Mode=TwoWay}" 
+                                                 FormatString="n" SpinButtonAlignment="Right" MaximumDecimalDigits="0" Minimum="0" Maximum="100"
+                                                 Grid.Row="0" Grid.Column="2" HorizontalOptions="Fill" VerticalOptions="CenterAndExpand" Margin="3,0"/>
+
+                    <Image Source="{Binding Matchday.AwayTeam.CachedImage}" Grid.Row="1" Grid.Column="0" Aspect="AspectFill" 
+                           VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="2,2" />
+                    <Label Text="{Binding Matchday.AwayTeam.Team}" Grid.Row="1" Grid.Column="1" FontAttributes="Bold" HorizontalOptions="Start" 
+                           VerticalOptions="CenterAndExpand" Margin="3,0" FontSize="Small"/>
+                    <numeric:SfNumericUpDown x:Name="awayScoreField" Value="{Binding Matchday.AwayScore, Mode=TwoWay}" 
+                                                 FormatString="n" SpinButtonAlignment="Right" MaximumDecimalDigits="0" Minimum="0" Maximum="100"
+                                                 Grid.Row="1" Grid.Column="2" HorizontalOptions="Fill" VerticalOptions="CenterAndExpand" Margin="3,0"/>
+                </Grid>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Margin="10" BackgroundColor="White" HorizontalOptions="Fill">
+                <Button x:Name="updateMatchdayBtn" Text="Update Matchday" Command="{Binding updateMatchdayCommand}" BackgroundColor="#2196F3" TextColor="White" HorizontalOptions="Fill" Margin="10"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
