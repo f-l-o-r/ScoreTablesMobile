@@ -12,18 +12,19 @@
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
                             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                            <Image Source="{Binding HomeTeam.ImageURL}" WidthRequest="50" HeightRequest="50" Margin="5"></Image>
-                            <StackLayout Orientation="Vertical" Margin="10, 0, 10, 0">
-                                <Label Text="{Binding HomeTeam.ID}"/>
-                                <Label Text="{Binding HomeScore}" />
+                                <Image Source="{Binding HomeTeam.ImageURL}" WidthRequest="50" HeightRequest="50" ></Image>
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding HomeTeam.ID}"/>
+                                    <Label Text="{Binding HomeScore}" />
+                                </StackLayout>
                             </StackLayout>
-                            </StackLayout>
+                            <Label Text="-"></Label>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                                <Image Source="{Binding AwayTeam.ImageURL}" WidthRequest="50" HeightRequest="50" Margin="5"></Image>
-                                <StackLayout Orientation="Vertical" Margin="10, 0, 10, 0">
+                                <StackLayout Orientation="Vertical">
                                     <Label Text="{Binding AwayTeam.ID}"/>
                                     <Label Text="{Binding AwayScore}" />
                                 </StackLayout>
+                                <Image Source="{Binding AwayTeam.ImageURL}" WidthRequest="50" HeightRequest="50"></Image> 
                             </StackLayout>
                         </StackLayout>
                     </ViewCell>

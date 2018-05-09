@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:ScoreTableMobile"
              x:Class="ScoreTableMobile.MainPage">
 
+    <Image Source=""></Image>
 	<Label Text="Welcome to Xamarin.Forms!" 
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
