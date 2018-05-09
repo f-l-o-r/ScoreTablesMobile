@@ -36,7 +36,7 @@ namespace ScoreTableMobile
         private Page getPage(String itemSelected) {
 
             switch(itemSelected) {
-                case "Home":
+                case "Create":
                     return new MastePageDetail();
                 case "Tables":
                     return new Tables.TableView();

@@ -100,7 +100,7 @@ namespace ScoreTableMobile.Backend.Data
         public async Task<bool> postDataAsync(LeagueModel model)
         {
             bool success = false;
-            var uri = new Uri(string.Format(Constants.RestUrl, string.Empty));
+            var uri = new Uri(string.Concat(Constants.RestUrl, "leagues"));
 
             try
             {
