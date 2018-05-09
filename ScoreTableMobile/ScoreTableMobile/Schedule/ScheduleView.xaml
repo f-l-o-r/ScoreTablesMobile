@@ -34,22 +34,6 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell Height="85">
-                        <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                                <Image Source="{Binding HomeTeam.CachedImage}" WidthRequest="50" HeightRequest="50" Margin="5"></Image>
-                            <StackLayout Orientation="Vertical" Margin="10, 0, 10, 0">
-                                <Label Text="{Binding HomeTeam.ID}"/>
-                                <Label Text="{Binding HomeScore}" />
-                            </StackLayout>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                                <Image Source="{Binding AwayTeam.CachedImage}" WidthRequest="50" HeightRequest="50" Margin="5"></Image>
-                                <StackLayout Orientation="Vertical" Margin="10, 0, 10, 0">
-                                    <Label Text="{Binding AwayTeam.ID}"/>
-                                    <Label Text="{Binding AwayScore}" />
-                                </StackLayout>
-                            </StackLayout>
-                        </StackLayout>-->
                         <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
