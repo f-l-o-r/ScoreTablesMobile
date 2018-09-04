@@ -31,7 +31,7 @@
                 </Grid>
             </StackLayout>
             <StackLayout Orientation="Vertical" Margin="10,10,10,0" BackgroundColor="White" HorizontalOptions="Fill">
-                <Label Text="Add Teams" TextColor="#03A9F4" FontAttributes="Bold" HorizontalOptions="Center" Margin="5" FontSize="Large"/>
+                <Label Text="Add Teams" TextColor="#2196F3" FontAttributes="Bold" HorizontalOptions="Center" Margin="5" FontSize="Large"/>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*" />
@@ -53,12 +53,12 @@
                     <Label Text="Image URL:" Grid.Row="2" Grid.Column="0" HorizontalOptions="End" Margin="10,0" VerticalOptions="Center" FontSize="Small"/>
                     <Entry x:Name="teamImageField" Text="{Binding TeamImageURL, Mode=TwoWay}" Grid.Row="2" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" FontSize="Small" Margin="3,0"/>
 
-                    <Button x:Name="addTeamBtn" Text="Add Team" FontSize="Small" Command="{Binding addTeamCommand}" Grid.Row="3" Grid.ColumnSpan="2" BackgroundColor="#03A9F4" TextColor="White" HorizontalOptions="Fill" Margin="10,5"/>
+                    <Button x:Name="addTeamBtn" Text="Add Team" FontSize="Small" Command="{Binding addTeamCommand}" Grid.Row="3" Grid.ColumnSpan="2" BackgroundColor="#2196F3" TextColor="White" HorizontalOptions="Fill" Margin="10,5"/>
                 </Grid>
             </StackLayout>
             <StackLayout Orientation="Vertical" Margin="10,10,10,0" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="StartAndExpand">
-                <Label Text="Teams" TextColor="#03A9F4" FontAttributes="Bold" HorizontalOptions="Center" Margin="5" FontSize="Large"/>
-                <ListView  x:Name="teamListView" RowHeight="44" ItemsSource="{Binding Teams, Mode=TwoWay}" SeparatorColor="#03A9F4" HorizontalOptions="Fill" HeightRequest="150" >
+                <Label Text="Teams" TextColor="#2196F3" FontAttributes="Bold" HorizontalOptions="Center" Margin="5" FontSize="Large"/>
+                <ListView  x:Name="teamListView" RowHeight="44" ItemsSource="{Binding Teams, Mode=TwoWay}" SeparatorColor="#2196F3" HorizontalOptions="Fill" HeightRequest="150" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell x:Name="viewCell">
@@ -86,10 +86,10 @@
                     </ListView.ItemTemplate>
                 </ListView>
 
-                <Button x:Name="removeTeamsBtn" IsEnabled="False" Text="Delete Teams" FontSize="Small" Command="{Binding addTeamCommand}" BackgroundColor="#03A9F4" TextColor="White" HorizontalOptions="Fill" Margin="10,5"/>
+                <Button x:Name="removeTeamsBtn" IsEnabled="False" Text="Delete Teams" FontSize="Small" Command="{Binding addTeamCommand}" BackgroundColor="#2196F3" TextColor="White" HorizontalOptions="Fill" Margin="10,5"/>
             </StackLayout>
             <StackLayout Orientation="Vertical" Margin="10" BackgroundColor="White" HorizontalOptions="Fill">
-                <Button x:Name="createLeagueBtn" Text="Create League" Command="{Binding createLeagueCommand}" BackgroundColor="#03A9F4" TextColor="White" HorizontalOptions="Fill" Margin="10"/>
+                <Button x:Name="createLeagueBtn" Text="Create League" Command="{Binding createLeagueCommand}" BackgroundColor="#2196F3" TextColor="White" HorizontalOptions="Fill" Margin="10"/>
             </StackLayout>
         </StackLayout>
     </ScrollView>
