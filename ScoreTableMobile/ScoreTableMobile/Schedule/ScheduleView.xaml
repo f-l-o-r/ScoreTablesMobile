@@ -17,6 +17,7 @@
             SeparatorColor="#2196F3" 
             HorizontalOptions="Fill"
             HasUnevenRows="true"
+            CachingStrategy="RecycleElement"
             ItemSelected="GroupedView_ItemSelected">
             <ListView.GroupHeaderTemplate>
                 <DataTemplate>
@@ -50,7 +51,7 @@
                             </Grid.RowDefinitions>
                             <Image Source="{Binding HomeTeam.CachedImage}" Grid.Row="0" Grid.Column="1" Aspect="AspectFill"
                                            VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Margin="2,2" />
-                            <Label Text="{Binding HomeTeam.Team}" Grid.Row="1" Grid.Column="1" FontSize="Micro" FontAttributes="Italic" 
+                            <Label Text="{Binding HomeTeam.ID}" Grid.Row="1" Grid.Column="1" FontSize="Micro" FontAttributes="Italic" 
                                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
 
                             <Label Text="{Binding HomeScore, Converter={StaticResource intToString}}" Grid.RowSpan="2" Grid.Column="2" FontAttributes="Bold" 
@@ -64,7 +65,7 @@
                             
                             <Image Source="{Binding AwayTeam.CachedImage}" Grid.Row="0" Grid.Column="5" Aspect="AspectFill"
                                            VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Margin="2,2" />
-                            <Label Text="{Binding AwayTeam.Team}" Grid.Row="1" Grid.Column="5" FontSize="Micro" FontAttributes="Italic" 
+                            <Label Text="{Binding AwayTeam.ID}" Grid.Row="1" Grid.Column="5" FontSize="Micro" FontAttributes="Italic" 
                                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
                         </Grid>
                     </ViewCell>

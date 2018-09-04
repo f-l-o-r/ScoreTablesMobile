@@ -22,7 +22,7 @@
 
                     <Image Source="{Binding Matchday.HomeTeam.CachedImage}" Grid.Row="0" Grid.Column="0" Aspect="AspectFill" 
                            VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="2,2" />
-                    <Label Text="{Binding Matchday.HomeTeam.Team}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" HorizontalOptions="Start" 
+                    <Label Text="{Binding Matchday.HomeTeam.ID}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" HorizontalOptions="Start" 
                            VerticalOptions="CenterAndExpand" Margin="3,0" FontSize="Small"/>
                     <numeric:SfNumericUpDown x:Name="homeScoreField" Value="{Binding Matchday.HomeScore, Mode=TwoWay}" 
                                                  FormatString="n" SpinButtonAlignment="Right" MaximumDecimalDigits="0" Minimum="0" Maximum="100"
@@ -30,7 +30,7 @@
 
                     <Image Source="{Binding Matchday.AwayTeam.CachedImage}" Grid.Row="1" Grid.Column="0" Aspect="AspectFill" 
                            VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="2,2" />
-                    <Label Text="{Binding Matchday.AwayTeam.Team}" Grid.Row="1" Grid.Column="1" FontAttributes="Bold" HorizontalOptions="Start" 
+                    <Label Text="{Binding Matchday.AwayTeam.ID}" Grid.Row="1" Grid.Column="1" FontAttributes="Bold" HorizontalOptions="Start" 
                            VerticalOptions="CenterAndExpand" Margin="3,0" FontSize="Small"/>
                     <numeric:SfNumericUpDown x:Name="awayScoreField" Value="{Binding Matchday.AwayScore, Mode=TwoWay}" 
                                                  FormatString="n" SpinButtonAlignment="Right" MaximumDecimalDigits="0" Minimum="0" Maximum="100"
