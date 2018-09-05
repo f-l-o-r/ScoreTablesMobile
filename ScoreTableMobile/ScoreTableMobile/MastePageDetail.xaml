@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScoreTableMobile.MastePageDetail"
              xmlns:numeric="clr-namespace:Syncfusion.SfNumericUpDown.XForms;assembly=Syncfusion.SfNumericUpDown.XForms"
-             Title="Create League">
+             Title="Create">
     <ScrollView BackgroundColor="#dededf" Orientation="Vertical">
         <StackLayout Orientation="Vertical">
             <StackLayout Orientation="Vertical" Margin="10,10,10,0" BackgroundColor="White" HorizontalOptions="Fill">

@@ -33,7 +33,7 @@ namespace ScoreTableMobile
             {
                 MenuItems = new ObservableCollection<MastePageMenuItem>(new[]
                 {
-                    new MastePageMenuItem { Id = "Create", Title = "Create League" },
+                    new MastePageMenuItem { Id = "Home", Title = "Home" },
                     new MastePageMenuItem { Id = "Tables", Title = "Tables" },
                     new MastePageMenuItem { Id = "Schedule", Title = "Schedule" },
                     new MastePageMenuItem { Id = "Teams", Title = "Teams" },
