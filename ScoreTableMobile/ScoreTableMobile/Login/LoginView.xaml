@@ -9,7 +9,7 @@
                 HorizontalOptions="CenterAndExpand" />
             <StackLayout Margin="20">
                 <Entry x:Name="entUsername"  Placeholder="username"></Entry>
-                <Entry x:Name="entPassword" Placeholder="password"></Entry>
+                <Entry x:Name="entPassword" Placeholder="password" IsPassword="True"></Entry>
                 <Button x:Name="btnSignIn" Clicked="onClickSignIn" Text="SignIn"></Button>
             </StackLayout>
         </StackLayout>

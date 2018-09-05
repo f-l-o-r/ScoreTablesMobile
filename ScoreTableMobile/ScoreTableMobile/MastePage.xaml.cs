@@ -12,10 +12,11 @@ namespace ScoreTableMobile
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MastePage : MasterDetailPage
     {
-        public MastePage()
+        public MastePage(string username)
         {
             InitializeComponent();
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
+            MasterPage.userName = username;
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

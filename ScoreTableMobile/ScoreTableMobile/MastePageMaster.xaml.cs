@@ -16,6 +16,7 @@ namespace ScoreTableMobile
     public partial class MastePageMaster : ContentPage
     {
         public ListView ListView;
+        public string userName;
 
         public MastePageMaster()
         {
@@ -23,6 +24,7 @@ namespace ScoreTableMobile
 
             BindingContext = new MastePageMasterViewModel();
             ListView = MenuItemsListView;
+            userName = lblHeaderName.Text;
         }
 
         class MastePageMasterViewModel : INotifyPropertyChanged

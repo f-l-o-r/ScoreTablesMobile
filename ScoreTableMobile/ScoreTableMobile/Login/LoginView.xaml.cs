@@ -20,7 +20,7 @@ namespace ScoreTableMobile.Login
         private async void onClickSignIn(object sender, EventArgs args) {
             try
             {
-                await Navigation.PushAsync(new MastePage());
+                await Navigation.PushAsync(new MastePage(entUsername.Text));
 
             }
             catch (Exception e) {
