@@ -16,7 +16,7 @@ namespace ScoreTableMobile
         {
             InitializeComponent();
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
-            MasterPage.userName = username;
+            MasterPage.userName.Text = username;
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
