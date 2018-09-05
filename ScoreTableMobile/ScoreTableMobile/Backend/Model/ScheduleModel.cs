@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +7,8 @@ namespace ScoreTableMobile.Backend.Model
 {
     public class ScheduleModel
     {
-        public String ID { get; set; }
+        [JsonProperty("_id")]
+        public string ID { get; set; }
         public int MatchDay { get; set; }
         public int HomeScore { get; set; } = -1;
         public int AwayScore { get; set; } = -1;

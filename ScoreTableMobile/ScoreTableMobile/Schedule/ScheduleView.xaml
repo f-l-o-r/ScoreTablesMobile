@@ -1,32 +1,73 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ScoreTableMobile.Schedule"
              x:Class="ScoreTableMobile.Schedule.ScheduleView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:IntToStringScoreConverter x:Key="intToString" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <ListView  x:Name="GroupedView" 
-		GroupDisplayBinding="{Binding Title}"
-		GroupShortNameBinding="{Binding ShortName}"
-		IsGroupingEnabled="true">
-            <ListView.ItemTemplate>
+        <ListView  
+            x:Name="GroupedView" 
+		    GroupDisplayBinding="{Binding Key}"
+		    GroupShortNameBinding="{Binding ShortName}"
+		    IsGroupingEnabled="true"
+            SeparatorColor="#2196F3" 
+            HorizontalOptions="Fill"
+            HasUnevenRows="true"
+            CachingStrategy="RecycleElement"
+            ItemSelected="GroupedView_ItemSelected">
+            <ListView.GroupHeaderTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                                <Image Source="{Binding HomeTeam.ImageURL}" WidthRequest="50" HeightRequest="50" ></Image>
-                                <StackLayout Orientation="Vertical">
-                                    <Label Text="{Binding HomeTeam.ID}"/>
-                                    <Label Text="{Binding HomeScore}" />
-                                </StackLayout>
-                            </StackLayout>
-                            <Label Text="-"></Label>
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                                <StackLayout Orientation="Vertical">
-                                    <Label Text="{Binding AwayTeam.ID}"/>
-                                    <Label Text="{Binding AwayScore}" />
-                                </StackLayout>
-                                <Image Source="{Binding AwayTeam.ImageURL}" WidthRequest="50" HeightRequest="50"></Image> 
-                            </StackLayout>
+                        <ViewCell.Height>
+                            <OnPlatform x:TypeArguments="x:Double" iOS="28" WinPhone="45" Android="45"/>
+                        </ViewCell.Height>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#2196F3">
+                            <Label Text="{Binding Key}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" 
+                                   VerticalTextAlignment="Center" TextColor="White" FontAttributes="Bold" FontSize="Large"/>
                         </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Height="85">
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="65" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="65" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="65" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Image Source="{Binding HomeTeam.CachedImage}" Grid.Row="0" Grid.Column="1" Aspect="AspectFill"
+                                           VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Margin="2,2" />
+                            <Label Text="{Binding HomeTeam.ID}" Grid.Row="1" Grid.Column="1" FontSize="Micro" FontAttributes="Italic" 
+                                   VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+
+                            <Label Text="{Binding HomeScore, Converter={StaticResource intToString}}" Grid.RowSpan="2" Grid.Column="2" FontAttributes="Bold" 
+                                   VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="Large"/>
+
+                            <Label Text="-" Grid.RowSpan="2" Grid.Column="3" FontAttributes="Bold" FontSize="Large"
+                                   VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+
+                            <Label Text="{Binding AwayScore, Converter={StaticResource intToString}}" Grid.RowSpan="2" Grid.Column="4" FontAttributes="Bold" 
+                                   VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="Large"/>
+                            
+                            <Image Source="{Binding AwayTeam.CachedImage}" Grid.Row="0" Grid.Column="5" Aspect="AspectFill"
+                                           VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Margin="2,2" />
+                            <Label Text="{Binding AwayTeam.ID}" Grid.Row="1" Grid.Column="5" FontSize="Micro" FontAttributes="Italic" 
+                                   VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                        </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate> 
